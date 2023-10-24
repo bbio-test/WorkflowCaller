@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
 	  <Product>Blackbird Test Plugin</Product>
 	  <AssemblyVersion>2.0.0</AssemblyVersion>
+  	<AssemblyName>Blackbird.Test.Plugin</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
