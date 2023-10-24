@@ -4,9 +4,9 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Product>Blackbird Test Plugin</Product>
-    <Description>Test plugin for demo purposes</Description>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <Product>Blackbird Test Plugin (DEMO)</Product>
+    <Description>Basic test plugin to present on demo</Description>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
     <AssemblyName>Blackbird.Test.Plugin</AssemblyName>
   </PropertyGroup>
 
