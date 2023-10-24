@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Product>Blackbird Test Plugin</Product>
-    <AssemblyVersion>2.0.1</AssemblyVersion>
+    <AssemblyVersion>2.0.2</AssemblyVersion>
     <AssemblyName>Blackbird.Test.Plugin</AssemblyName>
   </PropertyGroup>
 
