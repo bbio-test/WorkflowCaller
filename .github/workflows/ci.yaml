@@ -16,7 +16,7 @@ jobs:
           workflow: ${{ vars.GH_BUILD_WORKFLOW_DEV }}
           repo: ${{ vars.GH_BUILD_REPOSITORY }}
           token: ${{ secrets.GH_PAT_TOKEN }}
-          ref: main
+          ref: develop
           inputs: '{"repository_url": "${{ github.repository }}","branch":"${{ github.ref }}"'
 
       - name: Invoke workflow
