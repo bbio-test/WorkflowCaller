@@ -11,7 +11,7 @@ jobs:
   trigger-workflow:
     runs-on: ubuntu-latest
     steps:
-      - name: Invoke workflow
+      - name: Invoke Dev Workflow
         if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         uses: benc-uk/workflow-dispatch@v1
         with:
@@ -21,7 +21,7 @@ jobs:
           ref: develop
           inputs: '{"repository_url": "${{ github.repository }}","ref":"${{ github.ref }}"}'
 
-      - name: Invoke workflow
+      - name: Invoke Prod Workflow
         if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main'
         uses: benc-uk/workflow-dispatch@v1
         with:
