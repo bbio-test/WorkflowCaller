@@ -10,10 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Invoke workflow
+        if: github.event_name == 'push'
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: ${{ vars.GH_BUILD_WORKFLOW_DEV }}
+          repo: ${{ vars.GH_BUILD_REPOSITORY }}
+          token: ${{ secrets.GH_PAT_TOKEN }}
+          ref: main
+          inputs: '{"repository_url": "${{ github.repository }}","branch":"${{ github.ref }}"'
+
+      - name: Invoke workflow
+        if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main'
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: ${{ vars.GH_BUILD_WORKFLOW }}
           repo: ${{ vars.GH_BUILD_REPOSITORY }}
           token: ${{ secrets.GH_PAT_TOKEN }}
           ref: main
-          inputs: '{"repository_url": "${{ github.repository }}","branch":"${{ github.ref }}", "sha" : "${{ github.sha }}"}'
+          inputs: '{"repository_url": "${{ github.repository }}","ref":"${{ github.ref }}", "pullrequest_id":"${{ github.event.pull_request.number }}"}'
