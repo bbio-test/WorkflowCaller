@@ -1,9 +1,11 @@
 name: Invoker
 
 on:
+  pull_request:
+    types: [closed]
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   trigger-workflow:
