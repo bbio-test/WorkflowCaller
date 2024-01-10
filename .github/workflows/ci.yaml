@@ -28,3 +28,10 @@ jobs:
           token: ${{ secrets.GH_PAT_TOKEN }}
           ref: main
           inputs: '{"repository_url": "${{ github.repository }}","ref":"${{ github.ref }}", "pullrequest_id":"${{ github.event.pull_request.number }}"}'
+
+      - name: "CI: Check if substitutional file exists"
+        shell: pwsh
+        id: check_file
+        run: |
+          echo "Commit Message: ${{ github.event.head_commit.message }}"
+          echo "Commit URL: ${{ github.event.head_commit.url }}"
